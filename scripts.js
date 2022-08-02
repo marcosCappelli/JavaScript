@@ -82,3 +82,43 @@ console.log(fullName.toUpperCase())
 console.log(fullName.indexOf('Cappelli')) // Busca o número da string onde começa o nome 
 
 console.log('dfdfdfd'.indexOf('Cappelli'))
+
+console.log(fullName.slice(7, 15))
+console.log(fullName.slice(0, 6))
+
+// métodos de array
+const list = ['aa', 'bb', 'cc', 'dd', 'ee'] // contagem inicia em zero
+
+console.log(list.length)
+console.log(list[2])
+
+list[5] = 'ff' // adiciona na posição
+console.log(list)
+
+console.log(list[list.length -1]) //busca último elemento da lista
+
+list.push('gg') //adiciona elemento no final da lista
+console.log(list)
+
+list.pop() // remove elemento no final da lista
+console.log(list)
+
+list.shift() // remove elemento no inicio da lista
+console.log(list)
+
+list.unshift('aa') // adiciona elemento no inicio da lista
+console.log(list)
+
+// Objetos
+const product = {
+    name: 'camisa',
+    price: 15.50,
+    instock: true,
+    size: ['p', 'm', 'g'],
+    'Main color': 'azul',
+}
+
+console.log(product.name)
+console.log(product['name'])
+console.log(product['Main color'])
+
