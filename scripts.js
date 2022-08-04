@@ -122,3 +122,80 @@ console.log(product.name)
 console.log(product['name'])
 console.log(product['Main color'])
 
+// destructuring
+const { price, instock} = product //busca objetos da const product
+
+console.log(price)
+console.log(instock)
+
+const [n1, n2] = list //busca arrays da const list
+
+console.log(n1)
+console.log(n2)
+
+// JSON - JavaScript object Notation
+const dog = {
+    name: "Shark",
+    age: 10,
+}
+
+const json = JSON.stringify(dog) //essa chamada transforma os objetos para JSON
+
+console.log(json)
+
+const obj = JSON.parse(json) //converte JSON em objeto JavaScript novamente
+
+console.log(obj) 
+
+const jsonErrada = '{"name":"Teste", "surname":"Testando"}'//cuidar as regras de escrita JSON
+
+const obj2 = JSON.parse(jsonErrada)
+
+console.log(obj2)
+
+//Estruturas condicionais (if, else)
+const a = 10
+
+if (a > 8) {
+    console.log('A é maior que 8')
+}
+
+// >, <, >=, <=
+
+const b = 'Marcos'
+
+if (b === 'Joaquim') { //===faz a comparação do obejto
+    console.log('O nome é Joaquim!')
+}
+else if (b === 'Maria') { //comparativo 'se não' pode ser usado várias vezes  
+    console.log('O nome é Maria!') 
+}
+else if (b === 'Rosa') {
+    console.log('O nome é Rosa')
+}
+else {
+    console.log('O nome não foi encontrado!')
+}
+
+// if ternário
+const someNumber = 114
+
+let testingANumber = someNumber < 220 ? 'yes' : 'No'
+
+console.log(testingANumber)
+
+//estrutura de repetição - loop
+const myList = [1, 2, 3, 4, 5]
+let counter = 0 
+
+while (counter < myList.length) {
+    console.log('Imprimindo:  ' + myList[counter]) //Concatenando string com resultado da lista
+    //counter = counter + 1
+    counter++
+}
+
+const mySecondList = ['a', 'b', 'c', 'd', 'e'] 
+
+for (let counter = 0; counter < mySecondList.length; counter++) [
+    console.log(`Imprimindo: ${mySecondList[counter]}`) // template literals
+]
