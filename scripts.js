@@ -196,6 +196,62 @@ while (counter < myList.length) {
 
 const mySecondList = ['a', 'b', 'c', 'd', 'e'] 
 
-for (let counter = 0; counter < mySecondList.length; counter++) [
+for (let counter = 0; counter < mySecondList.length; counter++) {
     console.log(`Imprimindo: ${mySecondList[counter]}`) // template literals
-]
+}
+
+// métodos de array -> repetição
+const names = ['Marcos', 'Maria', 'Carlos', "Ari"]
+// método forEach repete todos os elementos
+names.forEach(function (name) {
+    console.log(`O nome é: ${name}`)
+})
+// método map altera o elemento desejado
+const modifiedNames = names.map(function (name) {
+    if (name === 'Marcos') {
+        return (name = 'Sr. Marcos')
+    } else {
+        return name
+    }
+})
+console.log(modifiedNames)
+// método filter filtra os elementos desejados
+const bigNumbers = [1, 2, 3, 4, 5, 10, 100].filter(function (number) {
+    return number >= 5
+})
+console.log(bigNumbers)
+// método reduce soma e mostra apenas o valor total
+const sumAll = [10, 20 ,30, 40, 50].reduce(function (total, number) {
+    return total + number
+})
+console.log(sumAll)
+
+// Funções
+function minhaFuncao() {
+    console.log('Olá função!')
+}
+// a função pode ser invocada várias vezes
+minhaFuncao()
+minhaFuncao()
+
+function nomeCompleto(nome, sobrenome) {
+    return `O nome completo é: ${nome} ${sobrenome}`
+}
+console.log(nomeCompleto('Marcos', 'Cappelli'))
+console.log(nomeCompleto('Maria', 'Joaquina'))
+
+
+const primeiroNome = 'Maria'
+const segundoNome = 'Joaquina'
+
+const meuNomeCompleto = nomeCompleto(primeiroNome, segundoNome)
+console.log(meuNomeCompleto)
+
+// arrow functions
+const myArrowFunction = (a, b) => {
+    return a + b
+}
+console.log(myArrowFunction(2, 5))
+
+const mySimpleArrowFunction = (a, b) => a + b
+console.log(myArrowFunction(5, 20))
