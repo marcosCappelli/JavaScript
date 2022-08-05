@@ -253,5 +253,100 @@ const myArrowFunction = (a, b) => {
 }
 console.log(myArrowFunction(2, 5))
 
+// forma mais simplificada de escrever a mesma function acima sem uso de bloco{}
 const mySimpleArrowFunction = (a, b) => a + b
 console.log(myArrowFunction(5, 20))
+
+
+//Classes
+class Product {
+    constructor(name, price) {
+        this.name = name
+        this.price = price
+    }
+    productDetails() {
+        return `O nome do produto é ${this.name} e o preço é R$${this.price}`
+    } 
+}
+const socks = new Product('Meia Azul', 10.90)
+const shirt = new Product('Camisa preta', 22.45)
+
+console.log(socks.name)
+console.log(socks.price)
+
+console.log(shirt.name)
+console.log(shirt.price)
+
+console.log(shirt.productDetails())
+console.log(socks.productDetails())
+
+//Herança
+class SuperProduct extends Product {
+    constructor(name, price, size) {
+        super(name, price)
+        this.size = size
+    }
+    showAdjective(adjective) {
+        return `O ${this.name} é muito ${adjective} `
+    }
+
+    // static
+    static sayHello() {
+        console.log('Helloooo')
+    }
+}
+
+const tenis = new SuperProduct('Tênis Vermelho', 129.90, '40')
+
+console.log(tenis.name)
+console.log(tenis.size)
+console.log(tenis.price)
+
+console.log(tenis.showAdjective('bom de vendas!'))
+
+SuperProduct.sayHello()
+
+// DOM - Document Object Model
+// Seleção de elementos
+const title = document.getElementById('title') // #title
+
+console.log(title)
+
+
+// query selector
+const sameTitle = document.querySelector('#title')
+
+console.log(sameTitle)
+
+const texts = document.querySelectorAll('.text')
+
+console.log(texts)
+console.log(texts[2])
+console.log(texts[3])
+
+texts.forEach((text) => {
+    console.log(text.textContent.toUpperCase())
+})
+
+// Manipulação de elemntos
+title.textContent = 'Mudei o texto' // Muda o texto pelo JS e não no HTML
+
+// mexer na propriedade do elemto HTML
+texts[0].innerHTML = '<span>Alteramos o HTML deste elemento</span>'
+
+// adicionando style aos elementos
+texts[1].style.backgroundColor = 'red' // background-color: red
+
+// adicionar uma classe/ Remove
+texts[2].classList.add('my-class')
+
+texts[2].classList.remove('text') // remove a classe 
+
+texts[3].remove() // remove o elemento em definitivo
+
+// Eventos
+const btn = document.querySelector('#btn')
+
+btn.addEventListener('click', function () {
+    texts[2].style.color = 'blue'
+})
